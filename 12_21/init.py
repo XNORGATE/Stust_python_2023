@@ -104,6 +104,23 @@ def generate_sample_data(connection):
     return sample_students
  
 class StudentGUI(QWidget):
+    """
+    A graphical user interface for managing student information and course queries.
+
+    Attributes:
+        connection (sqlite3.Connection): The connection to the SQLite database.
+    """
+
+    def __init__(self):
+        super().__init__()
+
+        self.connection = sqlite3.connect('students.db')
+        create_tables(self.connection)
+
+        self.init_ui()
+    
+    ...
+class StudentGUI(QWidget):
     def __init__(self):
         super().__init__()
  
